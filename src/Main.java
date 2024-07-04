@@ -13,7 +13,7 @@ public class Main {
   private static void CriarBanco() {
     JFrame f;
     f = new JFrame();
-    String nome = JOptionPane.showInputDialog(f, "Entre o Nome do Cliente");
+    String nome = JOptionPane.showInputDialog(f, "Insira o Nome do Cliente");
     Cliente cliente = new Cliente();
     cliente.setNome(nome);
     Conta cc = new ContaCorrente(cliente);
@@ -22,7 +22,7 @@ public class Main {
     while (fim) {
       int tipoConta =
           Integer.parseInt(
-              JOptionPane.showInputDialog(f,"Entre  com o tipo da conta: 0 - Sair, 1 - Conta Corrente, 2 - Conta Poupança "));
+              JOptionPane.showInputDialog(f,"Insira  com o tipo da conta: 0 - Sair, 1 - Conta Corrente, 2 - Conta Poupança "));
       switch (tipoConta) {
         case 0:
         fim = false;
@@ -38,21 +38,21 @@ public class Main {
           if (movimentoC == 1) cc.imprimirExtrato();
           if (movimentoC == 2) {
             double valor =
-                Double.parseDouble(JOptionPane.showInputDialog(f, "Entre com o valor da saque"));
+                Double.parseDouble(JOptionPane.showInputDialog(f, "Insira com o valor da saque"));
             cc.sacar(valor);
             cc.imprimirExtrato();
           }
           if (movimentoC == 3) {
             double valor =
                 Double.parseDouble(
-                    JOptionPane.showInputDialog(f, "Entre com o valor do depósito "));
+                    JOptionPane.showInputDialog(f, "Insira com o valor do depósito "));
             cc.depositar(valor);
             cc.imprimirExtrato();
           }
           if (movimentoC == 4) {
             double valor =
                 Double.parseDouble(
-                    JOptionPane.showInputDialog(f, "Entre com o valor da transferência "));
+                    JOptionPane.showInputDialog(f, "Insira com o valor da transferência "));
             cc.transferir(valor, pp);
             cc.imprimirExtrato();
           }
@@ -77,27 +77,27 @@ public class Main {
           if (movimentoP == 1) pp.imprimirExtrato();
           if (movimentoP == 2) {
             double valor =
-                Double.parseDouble(JOptionPane.showInputDialog(f, "Entre com o valor da saque"));
+                Double.parseDouble(JOptionPane.showInputDialog(f, "Insira  o valor da saque"));
             pp.sacar(valor);
             pp.imprimirExtrato();
           }
           if (movimentoP == 3) {
             double valor =
                 Double.parseDouble(
-                    JOptionPane.showInputDialog(f, "Entre com o valor do depósito "));
+                    JOptionPane.showInputDialog(f, "Insira  o valor do depósito "));
             pp.depositar(valor);
             pp.imprimirExtrato();
           }
           if (movimentoP == 4) {
             double valor =
             Double.parseDouble(
-            JOptionPane.showInputDialog(f, "Entre com o valor da transferência "));
+            JOptionPane.showInputDialog(f, "Insira  o valor da transferência "));
             pp.transferir(valor, cc);
             pp.imprimirExtrato();
           }
 
           if (movimentoP == 5) {
-            double valor = Double.parseDouble(JOptionPane.showInputDialog(f, "Entre com o valor para poupar"));
+            double valor = Double.parseDouble(JOptionPane.showInputDialog(f, "Insira o valor para poupar"));
             pp.investir(valor, pp);
             pp.imprimirExtrato();
             }
